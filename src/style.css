@@ -1,0 +1,215 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0000005b;
+  background-image: url(../public/Light.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.opaity {
+  margin: 0%;
+  padding: 0%;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Increased the number of columns */
+  grid-template-rows: repeat(
+    4,
+    1fr
+  ); /* Adjusted number of rows for better layout */
+  gap: 5px; /* Set gap between cards to 5px */
+  width: 80%;
+  max-width: 1000px;
+  height: 80%;
+  max-height: 1000px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #0000005b;
+  border: 2px solid #ddd;
+  justify-items: center; /* Center the cards horizontally */
+  align-items: center; /* Center the cards vertically */
+}
+
+.card {
+  background: #000000;
+  color: black;
+  padding: 0px; /* No padding, the image will control the size */
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Increased font size */
+  transition: background-color 0.3s ease;
+  height: 160px; /* Increased height */
+  width: 160px; /* Set width for uniform card size */
+  box-sizing: border-box;
+}
+
+.card img {
+  object-fit: contain; /* Ensure images fit inside the cards without distortion */
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  background: #000000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  width: 300px;
+  object-fit: contain;
+}
+
+.modal.active {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.timer {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.answer-btn {
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  width: 100%;
+  cursor: pointer;
+  margin: 5px 0;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #f1c40f;
+}
+
+.answer-btn:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.answer-btn.correct {
+  background-color: green;
+  color: white;
+}
+
+.answer-btn.wrong {
+  background-color: red;
+  color: white;
+}
+
+.question {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ul li {
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #0000005b;
+}
+
+#errors {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+#matches {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+#timer {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .box {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 0 45%; /* Adjust card size for smaller screens */
+    height: 100px;
+    width: 100px;
+  }
+
+  .modal {
+    width: 80%;
+  }
+
+  ul li {
+    width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background and Overlay -->
+    <div class="opaity">
+      <div class="container">
+        <!-- Game Container with 90% width -->
+        <div class="box" id="board">
+          <!-- Cards will be inserted dynamically using JavaScript -->
+        </div>
+      </div>
+
+      <!-- Timer, Matches, and Errors Display in Same Line -->
+      <div id="info" class="info-container">
+        <div id="timer">Time Left: 30s</div>
+        <div id="matches">Matches: 0</div>
+        <div id="errors">Errors: 0</div>
+      </div>
+    </div>
+
+    <!-- Modal for Game Over or Success -->
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="modal">
+      <h2 id="modal-message">Game Over!</h2>
+      <!-- Placeholder for Game Over or Success message -->
+      <button onclick="restartGame()">Restart</button>
+      <!-- Button to restart the game -->
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
